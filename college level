@@ -1,0 +1,53 @@
+#include<iostream>
+using namespace std;
+double celsius(double F);
+void religion(int option);
+void print_menu();
+int main() {
+char input = 'w';
+double f;
+char o;
+print_menu(); //print menu once before starting
+while (input != 'q') {
+cout << "Command:" << endl;
+cin >> input;
+cout << "Command:" << " " << input << endl;
+if (input == 'h')
+print_menu();
+else if (input == 't') {
+cout << "Fahrenheit:";
+cin >> f;
+celsius(f);
+}
+else if (input == 'r')
+cout << "Which religion?" << endl;
+cin >> o;
+religion(o);
+//repeat for r
+//add else for invalid
+}
+}
+double celsius(double F) {
+return (F-32) * 5/9;
+}
+void print_menu() {
+//cout statements
+cout << "q: quit" << endl;
+cout << "h: help" << endl;
+cout << "r: info about a religion" << endl;
+cout << "t: temperature conversion" << endl;
+}
+void religion(int option) {
+switch (option) {
+case 1:
+cout << "christianity: 31.2%" << endl;
+break;
+//you add case 2 and 3
+case 2:
+cout << "Islam: 24.1%" << endl;
+break;
+case 3:
+cout << "Secular/Nonreligious/Agnostic/Atheist: 16%" << endl;
+break;
+}
+}
